@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
@@ -5,6 +6,8 @@ import type { UserProfile } from '../../lib/profile.js';
 import { Strategy } from '../../lib/stategy.js';
 
 const app = express();
+
+dotenv.config();
 
 app.use(session({
   secret: 'linuxdo-super-secret-key',
@@ -24,8 +27,8 @@ passport.deserializeUser((user, done) => {
 });
 
 passport.use(new Strategy({
-  clientID: '',
-  clientSecret: '',
+  clientID: process.env.CLIENT_ID || '',
+  clientSecret: process.env.CLIENT_SECRET || '',
   callbackURL: 'http://localhost:3000/auth/callback',
 }, (accessToken: string, refreshToken: string, profile: any, done: Function) => {
   console.log('🎉 成功获取到 Access Token:', accessToken);
@@ -42,8 +45,8 @@ passport.use(new Strategy({
 // 首页：提供一个登录入口
 app.get('/', (req, res) => {
   res.send(`
-    <h2>Passport OAuth2 测试游乐场</h2>
-    <a href="/login">点击使用 SSO 登录</a>
+    <h2>Passport OAuth2 测试</h2>
+    <a href="/auth">点击使用 SSO 登录</a>
   `);
 });
 
@@ -55,7 +58,7 @@ app.get('/profile', (req, res) => {
   res.send(`
     <h2>欢迎回来，${user.name}！</h2>
     <img src="${user.avatar_url}" alt="Avatar" width="100" height="100" />
-    <pre>${JSON.stringify(user, null, 2)}</pre>
+    <pre>${user.name}</pre>
     <a href="/logout">退出登录</a>
   `);
 });
