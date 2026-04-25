@@ -1,5 +1,8 @@
 # passport-linuxdo
 
+[![npm version](https://img.shields.io/npm/v/passport-linuxdo.svg)](https://www.npmjs.com/package/passport-linuxdo)
+[![npm downloads](https://img.shields.io/npm/dm/passport-linuxdo.svg)](https://www.npmjs.com/package/passport-linuxdo)
+
 基于 [Passport.js](http://www.passportjs.org/) 的 LinuxDO Connect OAuth 2.0 认证策略，支持使用 LinuxDO 账号进行单点登录（SSO）。
 
 ## 安装
