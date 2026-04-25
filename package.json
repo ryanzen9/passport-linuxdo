@@ -35,7 +35,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryanzen9/passport-linuxdo"
+    "url": "git+https://github.com/ryanzen9/passport-linuxdo.git"
   },
   "dependencies": {
     "passport-oauth2": "^1.8.0"
