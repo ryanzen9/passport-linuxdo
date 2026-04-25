@@ -1,6 +1,6 @@
 {
   "name": "passport-linuxdo",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "LinuxDO Connect OAuth 2.0 authentication strategy for Passport.js",
   "author": {
     "name": "Ryan Zen",
