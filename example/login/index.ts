@@ -5,9 +5,9 @@ import passport from 'passport';
 import type { UserProfile } from '../../lib/profile.js';
 import { Strategy } from '../../lib/strategy.js';
 
-const app = express();
-
 dotenv.config();
+
+const app = express();
 
 app.use(session({
   secret: 'linuxdo-super-secret-key',
