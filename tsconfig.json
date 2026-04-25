@@ -15,5 +15,7 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+    "outDir": "./dist",
+  },
+  "exclude": ["example", "test", "dist"]
 }

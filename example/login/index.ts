@@ -3,7 +3,7 @@ import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
 import type { UserProfile } from '../../lib/profile.js';
-import { Strategy } from '../../lib/stategy.js';
+import { Strategy } from '../../lib/strategy.js';
 
 const app = express();
 
